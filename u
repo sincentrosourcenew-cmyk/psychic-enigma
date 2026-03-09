@@ -1,0 +1,15 @@
+# في جهازك المحلي
+mkdir ominibooks-app
+cd ominibooks-app
+
+# أنشئ الملفات
+# app.py (الصق الكود أعلاه)
+# requirements.txt (اكتب فيه: streamlit)
+
+git init
+git add .
+git commit -m "Initial commit"
+
+# اربط بـ GitHub
+git remote add origin https://github.com/USERNAME/ominibooks-app.git
+git push -u origin main
