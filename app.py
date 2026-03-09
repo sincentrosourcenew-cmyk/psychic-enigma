@@ -25,17 +25,17 @@ if st.session_state.page == 'login':
     tab1, tab2 = st.tabs(["تسجيل الدخول", "إنشاء حساب"])
     
     with tab1:
-        email = st.text_input("البريد الإلكتروني")
-        password = st.text_input("كلمة المرور", type="password")
+        email = st.text_input("البريد الإلكتروني", key="login_email")  # تمت الإضافة
+        password = st.text_input("كلمة المرور", type="password", key="login_password")  # تمت الإضافة
         if st.button("دخول", use_container_width=True):
             st.session_state.logged_in = True
             st.session_state.page = 'dashboard'
             st.rerun()
     
     with tab2:
-        st.text_input("الاسم")
-        st.text_input("البريد")
-        st.text_input("كلمة المرور", type="password")
+        st.text_input("الاسم", key="signup_name")  # تمت الإضافة
+        st.text_input("البريد", key="signup_email")  # تمت الإضافة
+        st.text_input("كلمة المرور", type="password", key="signup_password")  # تمت الإضافة
         if st.button("إنشاء", use_container_width=True):
             st.success("تم!")
 
@@ -64,8 +64,8 @@ elif st.session_state.page == 'dashboard':
 elif st.session_state.page == 'create':
     st.markdown("## إنشاء كتاب جديد")
     
-    title = st.text_input("عنوان الكتاب")
-    chapters = st.slider("عدد الفصول", 1, 10, 3)
+    title = st.text_input("عنوان الكتاب", key="book_title")  # تمت الإضافة
+    chapters = st.slider("عدد الفصول", 1, 10, 3, key="num_chapters")  # تمت الإضافة للـ slider أيضاً
     
     if st.button("← رجوع"):
         st.session_state.page = 'dashboard'
